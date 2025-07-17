@@ -18,11 +18,11 @@ function Register() {
         { withCredentials: true }
       );
 
-      console.log("✅ Registered:", res.data);
+      console.log("Registered:", res.data);
       alert("Registration successful!");
       navigate("/");
     } catch (err) {
-      console.error("❌ Register error:", err.response?.data?.error || err.message);
+      console.error("Register error:", err.response?.data?.error || err.message);
       alert(err.response?.data?.error || "Registration failed!");
     }
   };
@@ -30,11 +30,11 @@ function Register() {
   return (
     <div className="register-container">
       <form className="register-form" onSubmit={registerUser}>
-        <h2>Register 👑</h2>
+        <h2>Register</h2>
 
         <input
           type="text"
-          placeholder="👤 Username"
+          placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -42,7 +42,7 @@ function Register() {
 
         <input
           type="password"
-          placeholder="🔒 Password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required

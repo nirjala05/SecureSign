@@ -25,7 +25,7 @@ function Home() {
   const handleLogout = () => {
     axios.get("http://localhost:4000/logout", { withCredentials: true })
       .then(() => {
-        navigate("/login"); // ⏩ Go back to login page
+        navigate("/login"); //  Go back to login page
       })
       .catch((err) => {
         alert("Logout failed");
@@ -43,7 +43,7 @@ function Home() {
         position: "relative",
       }}
     >
-      {/* 🔓 Logout Top-Right */}
+      {/*  Logout Top-Right */}
       <div style={{ position: "absolute", top: "20px", right: "20px" }}>
         <button
           onClick={handleLogout}
@@ -61,7 +61,7 @@ function Home() {
         </button>
       </div>
 
-      {/* 💖 Centered Welcome */}
+      {/*  Centered Welcome */}
       <div
         style={{
           display: "flex",

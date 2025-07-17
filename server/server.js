@@ -20,8 +20,8 @@ app.use(cors({
 }));
 
 mongoose.connect(process.env.MONGO_URL)
-  .then(() => console.log("✅ Connected to MongoDB"))
-  .catch((err) => console.error("❌ DB connection error:", err));
+  .then(() => console.log(" Connected to MongoDB"))
+  .catch((err) => console.error(" DB connection error:", err));
 
 app.use(session({
   name: "queen-session",
@@ -39,7 +39,7 @@ app.use(session({
   }
 }));
 
-// 👑 REGISTER
+//  REGISTER
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
 
@@ -52,7 +52,7 @@ app.post("/register", async (req, res) => {
   }
 });
 
-// 👑 LOGIN with Session
+//  LOGIN with Session
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const user = await User.findOne({ username });
@@ -71,7 +71,7 @@ app.post("/login", async (req, res) => {
   res.json({ message: "Login successful" });
 });
 
-// 👑 PROFILE — only if session exists
+// PROFILE — only if session exists
 app.get("/profile", (req, res) => {
   if (req.session.user) {
     res.json({ user: req.session.user });
@@ -87,9 +87,9 @@ app.get("/logout", (req, res) => {
     sameSite: "Lax",
   });
 
-  console.log("👋 User logged out");
+  console.log(" User logged out");
   return res.json({ message: "Logged out successfully" });
 });
 
 
-app.listen(4000, () => console.log("🚀 Server running at http://localhost:4000"));
+app.listen(4000, () => console.log(" Server running at http://localhost:4000"));
